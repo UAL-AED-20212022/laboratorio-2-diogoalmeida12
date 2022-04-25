@@ -33,7 +33,7 @@ class LinkedList:
     
     def insert_after_item(self, x, data):
         n = self.start_node
-        print(n.ref)
+        # print(n.ref)
         while n is not None:
             if n.item == x:
                 break
@@ -76,17 +76,18 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = self.start_node
             self.start_node = new_node
-        i = 1
-        n = self.start_node
-        while i < index-1 and n is not None:
-            n = n.ref
-            i = i + 1
-        if n is None:
-            print("Index out of bound")
         else:
-            new_node = Node(data)
-            new_node.ref = n.ref
-            n.ref = new_node
+            i = 1
+            n = self.start_node
+            while i < index-1 and n is not None:
+                n = n.ref
+                i = i + 1
+            if n is None:
+                print("Index out of bound")
+            else:
+                new_node = Node(data)
+                new_node.ref = n.ref
+                n.ref = new_node
             
 
     def get_count(self):
