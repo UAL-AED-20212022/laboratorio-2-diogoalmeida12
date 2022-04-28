@@ -33,7 +33,7 @@ class LinkedList:
     
     def insert_after_item(self, x, data):
         n = self.start_node
-        # print(n.ref)
+        print(n.ref)
         while n is not None:
             if n.item == x:
                 break
@@ -108,17 +108,18 @@ class LinkedList:
         n = self.start_node
         while n is not None:
             if n.item == x:
-                print("Item found")
+                print("item found")
                 return True
             n = n.ref
-        print("item bot found")
+        print("item not found")
         return False
 
 
     def delete_at_start(self):
         if self.start_node is None:
             print("The list has no element to delete")
-            return
+            return 
+    # mal feito pois n ha maneira de verificar se retirou pq ha elementos ,ou se ja deu print (retorna sempre None)
         self.start_node = self.start_node.ref
     
     def delete_at_end(self):
